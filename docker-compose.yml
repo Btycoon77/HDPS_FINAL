@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   react:
@@ -17,10 +17,12 @@ services:
       dockerfile: Dockerfile.servers
     ports:
       - "8000:8000"
+    depends_on:
+      - flask
 
   flask:
     build:
-      context: ./server
+      context: .
       dockerfile: Dockerfile.flask
     ports:
       - "5000:5000"
@@ -30,7 +32,4 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - mongodb_data:/data/db
-
-volumes:
-  mongodb_data:
+     - ./data/db:/data/db 
