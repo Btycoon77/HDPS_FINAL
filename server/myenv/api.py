@@ -8,8 +8,8 @@ from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 import joblib
 import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
+
+# import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
